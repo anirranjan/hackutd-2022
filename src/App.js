@@ -37,7 +37,10 @@ function App() {
     let fNameParam = myName[0];
     let lNameParam = myName[1];
     Axios.get(
-      "https://api.utdnebula.com/professor?first_name=" + fNameParam + "&last_name=" + lNameParam,
+      "https://api.utdnebula.com/professor?first_name=" +
+        fNameParam +
+        "&last_name=" +
+        lNameParam,
       {
         headers: {
           "x-api-key": "AIzaSyDQZrVIQKM-WMwdRQkaqoidZFPiZIfDe_Q",
@@ -87,7 +90,7 @@ function App() {
         direction="column"
         justifyContent="center"
         alignItems="center"
-        spacing={5}
+        spacing={3}
       >
         <Grid item>
           <Avatar
@@ -108,10 +111,24 @@ function App() {
             />
           </form>
         </Grid>
+      </Grid>
 
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+        spacing={5}
+        padding={3}
+      >
         <Grid item>
-          <Card sx={{ width: 345}}>
-            <CardMedia component="img" height="250" image={professorImg} alt="Professor Image"/>
+          <Card sx={{ width: 345 }}>
+            <CardMedia
+              component="img"
+              height="250"
+              image={professorImg}
+              alt="Professor Image"
+            />
             <CardContent>
               <Typography variant="h5">
                 {fName} {lName}
@@ -124,15 +141,13 @@ function App() {
               <Typography variant="body2">
                 Number of Ratings: {numRatings}
               </Typography>
-              <Typography variant="body2">
-                Email: {professorEmail}
-              </Typography>
+              <Typography variant="body2">Email: {professorEmail}</Typography>
               <Typography variant="body2">
                 Office Location: {professorOfficeBuilding} {professorOfficeRoom}
-               </Typography>
+              </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small" onClick={viewRMP}>
+              <Button size="small" onClick={viewRMP} variant="contained" style={{ backgroundColor: "#154734" }}>
                 View Rate My Professor
               </Button>
             </CardActions>
@@ -150,7 +165,15 @@ function App() {
             />
           </VictoryChart>
         </Grid>
+      </Grid>
 
+      <Grid
+        container
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        spacing={5}
+      >
         <Grid item>
           <Button
             style={{ backgroundColor: "#154734" }}
